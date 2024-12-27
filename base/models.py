@@ -8,10 +8,12 @@ class User(AbstractUser):
     email = models.EmailField(unique=True, null=True)
     bio = models.TextField(null=True, blank=True)
 
+    hackathon_participant = models.BooleanField(default = True, null = True)
+
     #avatar = 
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = []
+    REQUIRED_FIELDS = ['username']
 
 class Event(models.Model):
     name = models.CharField(max_length=200)
