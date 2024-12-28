@@ -16,4 +16,6 @@ def event_page(request, pk):
     context = {'event': event}
     return render(request, 'event.html', context)
 
-#def registration_confirmation()
+def registration_confirmation(request, pk):
+    event = Event.objects.get(id = pk)
+    return render(request, 'event_confirmation.html', {'event': event})

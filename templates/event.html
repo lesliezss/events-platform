@@ -3,5 +3,7 @@
 {% block content%}
 
     <h1>{{event.name}}</h1>
+    <a href="{% url 'registration_confirmation' event.id%}">Register</a>
+    <p>{{event.description}}</p>
 
 {% endblock content%}
